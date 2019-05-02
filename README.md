@@ -7,7 +7,7 @@ of the test suite:
 ```txt
 $ go test
 PASS
-Tests: 3, Assertions: 4, Time: 213.62µs
+Tests: 460, Assertions: 1319, Time: 18.600047ms
 ok      github.com/elliotchance/testify-stats   0.014s
 ```
 
@@ -27,3 +27,12 @@ func TestMain(m *testing.M) {
 ```
 
 3. Run `go test` as normal.
+
+# Build/CI Check
+
+To make sure all assertions are recorded you can add the following step to your
+build/CI:
+
+```bash
+$(exit $(grep -r '"github.com/stretchr/testify"' . --include \*.go | wc -l))
+```
