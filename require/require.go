@@ -35,7 +35,6 @@ func DirExists(t *testing.T, path string, msgAndArgs ...interface{}) {
 	testify_stats.AddAssert(t, true)
 }
 
-// DirExistsf checks whether a directory exists in the given path. It also fails if the path is a file rather a directory or there is an error checking whether it exists.
 func DirExistsf(t *testing.T, path string, msg string, args ...interface{}) {
 	require.DirExistsf(t, path, msg, args...)
 	testify_stats.AddAssert(t, true)
@@ -116,7 +115,6 @@ func Fail(t *testing.T, failureMessage string, msgAndArgs ...interface{}) {
 	testify_stats.AddAssert(t, true)
 }
 
-// FailNow fails test
 func FailNow(t *testing.T, failureMessage string, msgAndArgs ...interface{}) {
 	require.FailNow(t, failureMessage, msgAndArgs...)
 	testify_stats.AddAssert(t, true)
